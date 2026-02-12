@@ -1,0 +1,136 @@
+{
+  "name": "generate_og_image",
+  "description": "Generate Open Graph / social media preview images from text. Returns a PNG image. Use for creating social media cards, blog post thumbnails, and preview images. Supports 8 templates: gradient, split, minimal, code, social, stats, versus, announcement.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "template": {
+        "type": "string",
+        "enum": ["gradient", "split", "minimal", "code", "social", "stats", "versus", "announcement"],
+        "description": "Template style to use"
+      },
+      "title": {
+        "type": "string",
+        "description": "Main title text (required for all templates)",
+        "maxLength": 100
+      },
+      "subtitle": {
+        "type": "string",
+        "description": "Subtitle or description text"
+      },
+      "author": {
+        "type": "string",
+        "description": "Author name (for gradient, split, social templates)"
+      },
+      "logo": {
+        "type": "string",
+        "description": "URL to logo image (for gradient template)"
+      },
+      "code": {
+        "type": "string",
+        "description": "Code to display (for code template)"
+      },
+      "language": {
+        "type": "string",
+        "description": "Programming language label (for code template)"
+      },
+      "avatar_url": {
+        "type": "string",
+        "description": "URL to author avatar (for social template)"
+      },
+      "handle": {
+        "type": "string",
+        "description": "Social media handle (for social template)"
+      },
+      "stats": {
+        "type": "array",
+        "description": "Array of {label, value} objects (for stats template)",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": { "type": "string" },
+            "value": { "type": "string" }
+          }
+        }
+      },
+      "left_title": {
+        "type": "string",
+        "description": "Left side title (for versus template)"
+      },
+      "right_title": {
+        "type": "string",
+        "description": "Right side title (for versus template)"
+      },
+      "left_items": {
+        "type": "array",
+        "description": "Left side features (for versus template)",
+        "items": { "type": "string" }
+      },
+      "right_items": {
+        "type": "array",
+        "description": "Right side features (for versus template)",
+        "items": { "type": "string" }
+      },
+      "winner": {
+        "type": "string",
+        "enum": ["left", "right", "none"],
+        "description": "Which side wins (for versus template)"
+      },
+      "emoji": {
+        "type": "string",
+        "description": "Emoji or icon character (for announcement template)"
+      },
+      "cta_text": {
+        "type": "string",
+        "description": "Call-to-action button text (for announcement template)"
+      },
+      "theme": {
+        "type": "object",
+        "description": "Custom color theme",
+        "properties": {
+          "background": {
+            "type": "string",
+            "description": "Background color or CSS gradient"
+          },
+          "foreground": {
+            "type": "string",
+            "description": "Text color (hex)"
+          },
+          "accent": {
+            "type": "string",
+            "description": "Accent color (hex)"
+          }
+        }
+      },
+      "dimensions": {
+        "type": "object",
+        "description": "Custom dimensions",
+        "properties": {
+          "width": {
+            "type": "integer",
+            "description": "Image width (200-2400)",
+            "minimum": 200,
+            "maximum": 2400
+          },
+          "height": {
+            "type": "integer",
+            "description": "Image height (200-1600)",
+            "minimum": 200,
+            "maximum": 1600
+          }
+        }
+      },
+      "format": {
+        "type": "string",
+        "enum": ["png", "svg"],
+        "description": "Output format (default: png)"
+      }
+    },
+    "required": ["template", "title"]
+  },
+  "endpoint": "POST /api/generate",
+  "pricing": {
+    "credits": 10,
+    "usd": 0.10
+  }
+}
