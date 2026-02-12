@@ -59,7 +59,9 @@ export function parseQueryParams(query: Record<string, unknown>): Partial<Genera
   const stringFields = [
     'template', 'title', 'subtitle', 'author', 'logo', 'tag',
     'code', 'language', 'avatar_url', 'handle', 'left_title',
-    'right_title', 'winner', 'emoji', 'cta_text', 'format'
+    'right_title', 'winner', 'emoji', 'cta_text', 'format',
+    // Custom template fields
+    'background_image', 'position', 'text_align', 'overlay_opacity', 'padding'
   ];
 
   for (const field of stringFields) {

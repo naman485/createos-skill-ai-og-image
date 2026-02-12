@@ -7,6 +7,7 @@ import { socialTemplate } from './social.js';
 import { statsTemplate } from './stats.js';
 import { versusTemplate } from './versus.js';
 import { announcementTemplate } from './announcement.js';
+import { customTemplate } from './custom.js';
 
 export const templates: Map<string, TemplateDefinition> = new Map([
   ['gradient', gradientTemplate],
@@ -16,7 +17,8 @@ export const templates: Map<string, TemplateDefinition> = new Map([
   ['social', socialTemplate],
   ['stats', statsTemplate],
   ['versus', versusTemplate],
-  ['announcement', announcementTemplate]
+  ['announcement', announcementTemplate],
+  ['custom', customTemplate]
 ]);
 
 export function getTemplate(id: string): TemplateDefinition | undefined {

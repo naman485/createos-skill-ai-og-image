@@ -1,13 +1,13 @@
 {
   "name": "generate_og_image",
-  "description": "Generate Open Graph / social media preview images from text. Returns a PNG image. Use for creating social media cards, blog post thumbnails, and preview images. Supports 8 templates: gradient, split, minimal, code, social, stats, versus, announcement.",
+  "description": "Generate Open Graph / social media preview images from text. Returns a PNG image. Use for creating social media cards, blog post thumbnails, and preview images. Supports 9 templates: gradient, split, minimal, code, social, stats, versus, announcement, custom (bring your own background image).",
   "inputSchema": {
     "type": "object",
     "properties": {
       "template": {
         "type": "string",
-        "enum": ["gradient", "split", "minimal", "code", "social", "stats", "versus", "announcement"],
-        "description": "Template style to use"
+        "enum": ["gradient", "split", "minimal", "code", "social", "stats", "versus", "announcement", "custom"],
+        "description": "Template style to use. Use 'custom' to bring your own background image."
       },
       "title": {
         "type": "string",
@@ -83,6 +83,24 @@
       "cta_text": {
         "type": "string",
         "description": "Call-to-action button text (for announcement template)"
+      },
+      "background_image": {
+        "type": "string",
+        "description": "URL to your own background image (for custom template)"
+      },
+      "position": {
+        "type": "string",
+        "enum": ["top-left", "top-center", "top-right", "center-left", "center", "center-right", "bottom-left", "bottom-center", "bottom-right"],
+        "description": "Text position on the image (for custom template, default: center)"
+      },
+      "text_align": {
+        "type": "string",
+        "enum": ["left", "center", "right"],
+        "description": "Text alignment (for custom template, default: center)"
+      },
+      "overlay_opacity": {
+        "type": "string",
+        "description": "Dark overlay opacity 0-100 for text readability (for custom template, default: 40)"
       },
       "theme": {
         "type": "object",
