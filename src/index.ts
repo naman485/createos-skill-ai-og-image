@@ -4,6 +4,7 @@ import { handleGenerate } from './routes/generate.js';
 import { handleTemplates } from './routes/templates.js';
 import { handleHealth } from './routes/health.js';
 import { handleDocs } from './routes/docs.js';
+import { handleShowcase } from './routes/showcase.js';
 import { setCorsHeaders, sendSuccess } from './utils/response.js';
 import { CREDITS_PER_REQUEST } from './utils/types.js';
 import fs from 'fs';
@@ -57,6 +58,7 @@ app.get('/', (_req, res) => {
       { method: 'GET', path: '/api/templates', description: 'List all available templates' }
     ],
     docs: '/docs',
+    showcase: '/showcase',
     health: '/health',
     mcp: '/mcp-tool.json'
   });
@@ -64,6 +66,7 @@ app.get('/', (_req, res) => {
 
 app.get('/health', handleHealth);
 app.get('/docs', handleDocs);
+app.get('/showcase', handleShowcase);
 
 // MCP tool definition
 app.get('/mcp-tool.json', (_req, res) => {
