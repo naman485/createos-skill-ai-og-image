@@ -101,25 +101,12 @@ export function handleDocs(_req: Request, res: Response): void {
       background: #388bfd33;
       color: #58a6ff;
     }
-    .pricing {
-      background: linear-gradient(135deg, #238636 0%, #1a7f37 100%);
-      border-radius: 8px;
-      padding: 24px;
-      margin: 20px 0;
-    }
-    .pricing-value { font-size: 2rem; font-weight: 700; color: #fff; }
-    .pricing-label { color: rgba(255,255,255,0.8); }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>⚡ AI OG Image Generator</h1>
     <p class="tagline">Generate beautiful Open Graph images from text — one API call, zero design skills.</p>
-
-    <div class="pricing">
-      <span class="pricing-value">10 credits</span>
-      <span class="pricing-label">per request ($0.10 USD)</span>
-    </div>
 
     <h2>Quick Start</h2>
     <pre><code>curl -X POST https://ai-og-image.nodeops.app/api/generate \\

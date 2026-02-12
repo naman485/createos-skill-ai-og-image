@@ -33,15 +33,6 @@ export function handleShowcase(_req: Request, res: Response): void {
       -webkit-text-fill-color: transparent;
     }
     .tagline { font-size: 1.25rem; color: #8b949e; margin-bottom: 24px; }
-    .badge {
-      display: inline-block;
-      padding: 6px 16px;
-      background: #238636;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #fff;
-    }
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -223,7 +214,6 @@ export function handleShowcase(_req: Request, res: Response): void {
     <header>
       <h1>⚡ AI OG Image Generator</h1>
       <p class="tagline">Generate beautiful Open Graph images from text — one API call, zero design skills.</p>
-      <span class="badge">10 credits per request ($0.10)</span>
     </header>
 
     <div class="grid">
