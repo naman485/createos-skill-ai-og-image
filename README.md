@@ -5,7 +5,7 @@
 ## 🚀 Try It
 
 ```bash
-curl -X POST https://ai-og-image.nodeops.app/api/generate \
+curl -X POST https://production-ai-og-image.tyzo.nodeops.app/api/generate \
   -H "Content-Type: application/json" \
   -d '{
     "template": "gradient",
@@ -17,7 +17,7 @@ curl -X POST https://ai-og-image.nodeops.app/api/generate \
 **Response:**
 Returns a PNG image directly (or SVG if `format: "svg"`).
 
-![Example OG Image](https://ai-og-image.nodeops.app/api/generate?template=gradient&title=Hello+World&subtitle=Generated+with+CreateOS)
+![Example OG Image](https://production-ai-og-image.tyzo.nodeops.app/api/generate?template=gradient&title=Hello+World&subtitle=Generated+with+CreateOS)
 
 ## API Reference
 
@@ -76,7 +76,7 @@ Add `?meta=true` to get JSON metadata instead:
 Same as POST but via query params — perfect for direct use in `<meta>` tags:
 
 ```html
-<meta property="og:image" content="https://ai-og-image.nodeops.app/api/generate?template=gradient&title=My+Blog+Post" />
+<meta property="og:image" content="https://production-ai-og-image.tyzo.nodeops.app/api/generate?template=gradient&title=My+Blog+Post" />
 ```
 
 ### `GET /api/templates`
@@ -117,12 +117,12 @@ List all available templates with their required fields.
 
 **Gradient:**
 ```bash
-curl "https://ai-og-image.nodeops.app/api/generate?template=gradient&title=My+Awesome+Post&subtitle=A+great+subtitle&author=NK"
+curl "https://production-ai-og-image.tyzo.nodeops.app/api/generate?template=gradient&title=My+Awesome+Post&subtitle=A+great+subtitle&author=NK"
 ```
 
 **Code:**
 ```bash
-curl -X POST https://ai-og-image.nodeops.app/api/generate \
+curl -X POST https://production-ai-og-image.tyzo.nodeops.app/api/generate \
   -H "Content-Type: application/json" \
   -d '{
     "template": "code",
@@ -134,7 +134,7 @@ curl -X POST https://ai-og-image.nodeops.app/api/generate \
 
 **Stats:**
 ```bash
-curl -X POST https://ai-og-image.nodeops.app/api/generate \
+curl -X POST https://production-ai-og-image.tyzo.nodeops.app/api/generate \
   -H "Content-Type: application/json" \
   -d '{
     "template": "stats",
@@ -169,7 +169,7 @@ This Skill is auto-discoverable by AI agents via MCP:
 
 ```bash
 # Fetch tool definition
-curl https://ai-og-image.nodeops.app/mcp-tool.json
+curl https://production-ai-og-image.tyzo.nodeops.app/mcp-tool.json
 ```
 
 AI agents can use this tool to generate social media preview images programmatically.

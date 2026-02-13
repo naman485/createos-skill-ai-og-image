@@ -109,7 +109,7 @@ export function handleDocs(_req: Request, res: Response): void {
     <p class="tagline">Generate beautiful Open Graph images from text — one API call, zero design skills.</p>
 
     <h2>Quick Start</h2>
-    <pre><code>curl -X POST https://ai-og-image.nodeops.app/api/generate \\
+    <pre><code>curl -X POST https://production-ai-og-image.tyzo.nodeops.app/api/generate \\
   -H "Content-Type: application/json" \\
   -d '{
     "template": "gradient",

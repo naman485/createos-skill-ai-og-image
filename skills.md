@@ -162,7 +162,7 @@ Health check endpoint returning service status.
 ### Basic Usage
 
 ```bash
-curl -X POST https://ai-og-image.nodeops.app/api/generate \
+curl -X POST https://production-ai-og-image.tyzo.nodeops.app/api/generate \
   -H "Content-Type: application/json" \
   -d '{"template": "gradient", "title": "My Blog Post"}' \
   --output og-image.png
@@ -171,13 +171,13 @@ curl -X POST https://ai-og-image.nodeops.app/api/generate \
 ### In HTML Meta Tags
 
 ```html
-<meta property="og:image" content="https://ai-og-image.nodeops.app/api/generate?template=gradient&title=My+Blog+Post" />
+<meta property="og:image" content="https://production-ai-og-image.tyzo.nodeops.app/api/generate?template=gradient&title=My+Blog+Post" />
 ```
 
 ### Custom Branding
 
 ```bash
-curl -X POST https://ai-og-image.nodeops.app/api/generate \
+curl -X POST https://production-ai-og-image.tyzo.nodeops.app/api/generate \
   -H "Content-Type: application/json" \
   -d '{
     "template": "custom",
@@ -194,7 +194,7 @@ curl -X POST https://ai-og-image.nodeops.app/api/generate \
 This skill is discoverable by AI agents via MCP. Fetch the tool definition:
 
 ```bash
-curl https://ai-og-image.nodeops.app/mcp-tool.json
+curl https://production-ai-og-image.tyzo.nodeops.app/mcp-tool.json
 ```
 
 AI agents can use this skill to generate social media preview images programmatically without any design tools.
